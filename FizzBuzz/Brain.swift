@@ -65,7 +65,7 @@ class Brain{
         - number - the number to be checked
      
      - returns
-        a String output
+        a String containing the result of check
     */
     func check(_ number: Int) -> String {
         return "Fizz"
