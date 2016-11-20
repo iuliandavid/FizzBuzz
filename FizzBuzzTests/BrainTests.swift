@@ -93,4 +93,13 @@ class BrainTests: XCTestCase {
         
     }
     
+    /**
+     Test for returning a String **Fizz** 
+     when issuing check function 
+    */
+    func testSayFizz() {
+        let result = brain.check(3)
+        XCTAssertEqual(result, "Fizz")
+    }
+    
 }

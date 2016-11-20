@@ -59,5 +59,17 @@ class Brain{
         return (number % divisor) == 0
     }
     
+    /**
+     Checks a number a returns a String
+     - parameters
+        - number - the number to be checked
+     
+     - returns
+        a String output
+    */
+    func check(_ number: Int) -> String {
+        return "Fizz"
+    }
+    
     
 }
