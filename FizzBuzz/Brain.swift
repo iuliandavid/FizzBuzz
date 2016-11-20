@@ -18,31 +18,46 @@ class Brain{
         Bool : true if divisible, else false
     */
     func isDivisibleByThree(number: Int) -> Bool {
-        return (number % 3) == 0
+        return isDivisibleBy(3, number: number)
     }
     
     
     /**
      A function that if a number is divisible to 5
      - parameters:
-     - number : the number to be tested
+        - number : the number to be tested
      - returns:
      Bool : true if divisible, else false
      */
     func isDivisibleByFive(number: Int) -> Bool {
-        return (number % 5) == 0
+        return isDivisibleBy(5, number: number)
     }
     
     
     /**
      A function that if a number is divisible to 15
      - parameters:
-     - number : the number to be tested
+        - number : the number to be tested
      - returns:
      Bool : true if divisible, else false
      */
     func isDivisibleByFifteen(number: Int) -> Bool {
-        return (number % 15) == 0
+        return isDivisibleBy(15, number: number)
     }
+    
+    
+    /**
+     A function that if a number is divisible to a divisor by checking the equality between modulo result and 0
+     - parameters:
+        - divisor : the number to be divised against
+        - number : the number to be tested
+     
+     - returns:
+     Bool : true if divisible, else false
+     */
+    func isDivisibleBy(_ divisor: Int, number: Int) -> Bool {
+        return (number % divisor) == 0
+    }
+    
     
 }
