@@ -36,14 +36,16 @@ class GameTests: XCTestCase {
     
     func testIfMoveIsRight() {
         game.score = 2
-        let result = game.play("Fizz")
+        let response = game.play("Fizz")
+        let result = response.right
         XCTAssertEqual(result, true)
     }
     
     
     func testIfMoveIsWrong() {
         game.score = 1
-        let result = game.play("Fizz")
+        let response = game.play("Fizz")
+        let result = response.right
         XCTAssertEqual(result, false)
     }
     
@@ -52,7 +54,8 @@ class GameTests: XCTestCase {
     */
     func testIfBuzzMoveRight() {
         game.score = 4
-        let result = game.play("Buzz")
+        let response = game.play("Buzz")
+        let result = response.right
         XCTAssertEqual(result, true)
     }
     
@@ -61,7 +64,8 @@ class GameTests: XCTestCase {
      */
     func testIfBuzzMoveFalse() {
         game.score = 1
-        let result = game.play("Buzz")
+        let response = game.play("Buzz")
+        let result = response.right
         XCTAssertEqual(result, false)
     }
 
@@ -70,7 +74,8 @@ class GameTests: XCTestCase {
      */
     func testFizzBuzzMoveRight() {
         game.score = 14
-        let result = game.play("FizzBuzz")
+        let response = game.play("FizzBuzz")
+        let result = response.right
         XCTAssertEqual(result, true)
     }
     
@@ -79,7 +84,8 @@ class GameTests: XCTestCase {
      */
     func testFizzBuzzMoveFalse() {
         game.score = 1
-        let result = game.play("FizzBuzz")
+        let response = game.play("FizzBuzz")
+        let result = response.right
         XCTAssertEqual(result, false)
     }
 
@@ -90,7 +96,8 @@ class GameTests: XCTestCase {
      */
     func testNumberTwoMoveRight() {
         game.score = 1
-        let result = game.play("2")
+        let response = game.play("2")
+        let result = response.right
         XCTAssertEqual(result, true)
     }
     
@@ -99,7 +106,8 @@ class GameTests: XCTestCase {
      */
     func testNumberThreeMoveFalse() {
         game.score = 2
-        let result = game.play("3")
+        let response = game.play("3")
+        let result = response.right
         XCTAssertEqual(result, false)
     }
     

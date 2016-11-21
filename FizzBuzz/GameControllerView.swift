@@ -10,9 +10,14 @@ import UIKit
 
 class GameControllerView: UIViewController {
 
+    var game : Game?
+    var gameScore: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        game = Game()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +26,17 @@ class GameControllerView: UIViewController {
     }
 
 
+    func play(_ move: String){
+        
+        guard let game = game else {
+            print("The Game is nil")
+            return
+        }
+        
+       let response = game.play(move)
+       
+        gameScore = response.score
+        
+    }
 }
 
