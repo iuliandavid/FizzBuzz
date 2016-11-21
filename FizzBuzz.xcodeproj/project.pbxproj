@@ -12,7 +12,6 @@
 		B81A52FB1DE237130074D73B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B81A52F91DE237130074D73B /* Main.storyboard */; };
 		B81A52FD1DE237130074D73B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B81A52FC1DE237130074D73B /* Assets.xcassets */; };
 		B81A53001DE237130074D73B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B81A52FE1DE237130074D73B /* LaunchScreen.storyboard */; };
-		B81A53161DE237130074D73B /* FizzBuzzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A53151DE237130074D73B /* FizzBuzzUITests.swift */; };
 		B81A53241DE23B020074D73B /* BrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81A53231DE23B020074D73B /* BrainTests.swift */; };
 		B8D37E461DE23DE3001CB4F7 /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D37E451DE23DE3001CB4F7 /* Brain.swift */; };
 		B8D37E471DE23E0B001CB4F7 /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D37E451DE23DE3001CB4F7 /* Brain.swift */; };
@@ -21,6 +20,7 @@
 		B8D37E4C1DE2A7A1001CB4F7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D37E4B1DE2A7A1001CB4F7 /* Game.swift */; };
 		B8D37E4D1DE2A7A1001CB4F7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D37E4B1DE2A7A1001CB4F7 /* Game.swift */; };
 		B8D37E531DE3697E001CB4F7 /* GameControllerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D37E521DE3697E001CB4F7 /* GameControllerViewTests.swift */; };
+		B8D37E551DE37C08001CB4F7 /* GameControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D37E541DE37C08001CB4F7 /* GameControllerUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,13 +51,13 @@
 		B81A53061DE237130074D73B /* FizzBuzzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FizzBuzzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81A530C1DE237130074D73B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B81A53111DE237130074D73B /* FizzBuzzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FizzBuzzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B81A53151DE237130074D73B /* FizzBuzzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FizzBuzzUITests.swift; sourceTree = "<group>"; };
 		B81A53171DE237130074D73B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B81A53231DE23B020074D73B /* BrainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrainTests.swift; sourceTree = "<group>"; };
 		B8D37E451DE23DE3001CB4F7 /* Brain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
 		B8D37E491DE2A738001CB4F7 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		B8D37E4B1DE2A7A1001CB4F7 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B8D37E521DE3697E001CB4F7 /* GameControllerViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameControllerViewTests.swift; sourceTree = "<group>"; };
+		B8D37E541DE37C08001CB4F7 /* GameControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameControllerUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +131,8 @@
 		B81A53141DE237130074D73B /* FizzBuzzUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B81A53151DE237130074D73B /* FizzBuzzUITests.swift */,
 				B81A53171DE237130074D73B /* Info.plist */,
+				B8D37E541DE37C08001CB4F7 /* GameControllerUITests.swift */,
 			);
 			path = FizzBuzzUITests;
 			sourceTree = "<group>";
@@ -335,7 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8D37E481DE23E0C001CB4F7 /* Brain.swift in Sources */,
-				B81A53161DE237130074D73B /* FizzBuzzUITests.swift in Sources */,
+				B8D37E551DE37C08001CB4F7 /* GameControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

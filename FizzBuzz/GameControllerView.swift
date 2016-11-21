@@ -9,9 +9,23 @@
 import UIKit
 
 class GameControllerView: UIViewController {
-
+    
+    //Properties
     var game : Game?
-    var gameScore: Int?
+    
+    //Outlets
+    @IBOutlet weak var numberButton: UIButton!
+    
+    /**
+     Adding a property observer to update the numberButton
+     When gameScore changes it will change the button's label
+    */
+    var gameScore: Int? {
+        didSet {
+            numberButton.setTitle("1", for: .normal)
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +51,10 @@ class GameControllerView: UIViewController {
        
         gameScore = response.score
         
+    }
+    
+    @IBAction func numberButtonPressed(_ sender: UIButton) {
+        play("\(gameScore! + 1)")
     }
 }
 

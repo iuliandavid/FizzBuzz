@@ -1,15 +1,17 @@
 //
-//  FizzBuzzUITests.swift
-//  FizzBuzzUITests
+//  GameControllerUITests.swift
+//  FizzBuzz
 //
-//  Created by iulian david on 11/20/16.
+//  Created by iulian david on 11/21/16.
 //  Copyright © 2016 iulian david. All rights reserved.
 //
 
 import XCTest
 
-class FizzBuzzUITests: XCTestCase {
-        
+class GameControllerUITests: XCTestCase {
+    
+    let app = XCUIApplication()
+    
     override func setUp() {
         super.setUp()
         
@@ -21,6 +23,7 @@ class FizzBuzzUITests: XCTestCase {
         XCUIApplication().launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        
     }
     
     override func tearDown() {
@@ -28,9 +31,22 @@ class FizzBuzzUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTapNumberButtonIncrementsScore() {
+        
+        let numberButton = app.buttons["numberButton"]
+        
+        numberButton.tap()
+        let newScore = numberButton.label
+        XCTAssertEqual(newScore, "1")
     }
     
+    func testTapTwiceNumberButtonShouldSetButtonLabelToTwo() {
+        
+        let numberButton = app.buttons["numberButton"]
+        
+        numberButton.tap()
+        numberButton.tap()
+        let newScore = numberButton.label
+        XCTAssertEqual(newScore, "2")
+    }
 }
