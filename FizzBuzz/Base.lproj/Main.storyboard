@@ -1,14 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Controller View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameControllerView" id="BYZ-38-t0r" customClass="GameControllerView" customModule="FizzBuzz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +23,86 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux6-ma-w9N">
+                                <rect key="frame" x="234" y="607" width="121" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="PLAY AGAIN">
+                                    <color key="titleColor" red="0.97254901960784312" green="0.95294117647058818" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80y-Db-UiE">
+                                <rect key="frame" x="323.5" y="40" width="31.5" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.97254901959999995" green="0.95294117649999999" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYt-Al-Rz1" userLabel="GameView">
+                                <rect key="frame" x="56" y="202" width="262" height="262"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwa-06-jYY">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="126"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="70"/>
+                                        <state key="normal" title="0" backgroundImage="button_border">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NB-hx-o6P">
+                                        <rect key="frame" x="136" y="0.0" width="126" height="126"/>
+                                        <state key="normal" image="champagne100" backgroundImage="button_border"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHj-Uv-3hj">
+                                        <rect key="frame" x="0.0" y="136" width="126" height="126"/>
+                                        <state key="normal" image="lightning100" backgroundImage="button_border"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jY9-1w-uvV">
+                                        <rect key="frame" x="136" y="136" width="126" height="126"/>
+                                        <state key="normal" image="space100" backgroundImage="button_border"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6NB-hx-o6P" firstAttribute="width" secondItem="Lwa-06-jYY" secondAttribute="width" id="03A-Cx-aRg"/>
+                                    <constraint firstItem="rHj-Uv-3hj" firstAttribute="leading" secondItem="KYt-Al-Rz1" secondAttribute="leading" id="1FY-yS-Q1M"/>
+                                    <constraint firstItem="rHj-Uv-3hj" firstAttribute="width" secondItem="Lwa-06-jYY" secondAttribute="width" id="4yq-s1-zVN"/>
+                                    <constraint firstAttribute="trailing" secondItem="6NB-hx-o6P" secondAttribute="trailing" id="FhJ-O0-WDC"/>
+                                    <constraint firstAttribute="trailing" secondItem="jY9-1w-uvV" secondAttribute="trailing" id="HxB-eu-9if"/>
+                                    <constraint firstItem="Lwa-06-jYY" firstAttribute="width" secondItem="KYt-Al-Rz1" secondAttribute="width" multiplier="0.48" id="IwT-n1-jrF"/>
+                                    <constraint firstItem="Lwa-06-jYY" firstAttribute="leading" secondItem="KYt-Al-Rz1" secondAttribute="leading" id="LOG-Co-LBm"/>
+                                    <constraint firstItem="jY9-1w-uvV" firstAttribute="height" secondItem="6NB-hx-o6P" secondAttribute="height" id="Tby-bb-4Fe"/>
+                                    <constraint firstItem="6NB-hx-o6P" firstAttribute="top" secondItem="KYt-Al-Rz1" secondAttribute="top" id="TmS-bL-sFL"/>
+                                    <constraint firstItem="rHj-Uv-3hj" firstAttribute="height" secondItem="Lwa-06-jYY" secondAttribute="height" id="V0E-Bx-g6p"/>
+                                    <constraint firstItem="Lwa-06-jYY" firstAttribute="height" secondItem="KYt-Al-Rz1" secondAttribute="height" multiplier="0.48" id="dxJ-ZZ-1qj"/>
+                                    <constraint firstAttribute="bottom" secondItem="rHj-Uv-3hj" secondAttribute="bottom" id="iQR-ze-fUI"/>
+                                    <constraint firstItem="jY9-1w-uvV" firstAttribute="width" secondItem="6NB-hx-o6P" secondAttribute="width" id="mO6-7T-chy"/>
+                                    <constraint firstAttribute="bottom" secondItem="jY9-1w-uvV" secondAttribute="bottom" id="pRp-ZO-4A9"/>
+                                    <constraint firstItem="6NB-hx-o6P" firstAttribute="height" secondItem="Lwa-06-jYY" secondAttribute="height" id="sZf-a6-SxM"/>
+                                    <constraint firstItem="Lwa-06-jYY" firstAttribute="top" secondItem="KYt-Al-Rz1" secondAttribute="top" id="vcO-ug-hRD"/>
+                                    <constraint firstAttribute="width" secondItem="KYt-Al-Rz1" secondAttribute="height" multiplier="1:1" id="vhe-tE-ebC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KYt-Al-Rz1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3IN-8F-gFC"/>
+                            <constraint firstItem="80y-Db-UiE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Tk5-hc-ih6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ux6-ma-w9N" secondAttribute="bottom" constant="20" id="ZJ7-py-63r"/>
+                            <constraint firstItem="KYt-Al-Rz1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="f1q-y9-oLy"/>
+                            <constraint firstItem="KYt-Al-Rz1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m1B-VX-ggH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ux6-ma-w9N" secondAttribute="trailing" constant="4" id="xxM-Fp-LpI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="80y-Db-UiE" secondAttribute="trailing" constant="4" id="ydi-0i-m7q"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_border" width="400" height="400"/>
+        <image name="champagne100" width="98" height="100"/>
+        <image name="lightning100" width="58" height="100"/>
+        <image name="space100" width="94" height="100"/>
+    </resources>
 </document>
