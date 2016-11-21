@@ -94,12 +94,40 @@ class BrainTests: XCTestCase {
     }
     
     /**
-     Test for returning a String **Fizz** 
-     when issuing check function 
+     Test for returning a String **Fizz**
+     when issuing check function with **3** as input
     */
     func testSayFizz() {
         let result = brain.check(3)
         XCTAssertEqual(result, "Fizz")
     }
     
+    
+    /**
+     Test for returning a String **Buzz**
+     when issuing check function with **5** as input
+     */
+    func testSayBuzz() {
+        let result = brain.check(5)
+        XCTAssertEqual(result, "Buzz")
+    }
+    
+    
+    /**
+     Test for returning a String **FizzBuzz**
+     when issuing check function with **15** as input
+     */
+    func testSayFizzBuzz() {
+        let result = brain.check(15)
+        XCTAssertEqual(result, "FizzBuzz")
+    }
+    
+    /**
+     Test for returning a String **1**
+     when issuing check function with **1** as input
+     */
+    func testChcekOneShouldReturnOne() {
+        let result = brain.check(1)
+        XCTAssertEqual(result, "1")
+    }
 }
