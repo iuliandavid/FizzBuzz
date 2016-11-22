@@ -32,7 +32,7 @@ class Game {
      - parameters:
         - move : The move to test
     */
-    func play(_ move: String) -> (right: Bool, score: Int) {
+    func play(_ move: Move) -> (right: Bool, score: Int) {
         let result = brain.check(score + 1)
         
         if result == move {

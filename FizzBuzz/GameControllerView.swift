@@ -49,7 +49,7 @@ class GameControllerView: UIViewController {
     }
 
 
-    func play(_ move: String){
+    func play(_ move: Move){
         
         guard let game = game else {
             print("The Game is nil")
@@ -63,12 +63,23 @@ class GameControllerView: UIViewController {
     }
     
     @IBAction func numberButtonPressed(_ sender: UIButton) {
-        guard let score = gameScore else {
-            print("Game score is nil")
+        
+        guard let idenitfier = sender.accessibilityIdentifier else {
             return
         }
-        let nextScore = score + 1
-        play("\(nextScore)")
+        switch idenitfier {
+        case "numberButton":
+             play(Move.Number)
+        case "fizzButton":
+            play(Move.Fizz)
+        case "buzzButton":
+            play(Move.Buzz)
+        case "fizzBuzzButton":
+            play(Move.FizzBuzz)
+        default:
+            return
+        }
+       
     }
 }
 

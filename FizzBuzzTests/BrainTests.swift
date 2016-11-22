@@ -99,7 +99,7 @@ class BrainTests: XCTestCase {
     */
     func testSayFizz() {
         let result = brain.check(3)
-        XCTAssertEqual(result, "Fizz")
+        XCTAssertEqual(result, Move.Fizz)
     }
     
     
@@ -109,7 +109,7 @@ class BrainTests: XCTestCase {
      */
     func testSayBuzz() {
         let result = brain.check(5)
-        XCTAssertEqual(result, "Buzz")
+        XCTAssertEqual(result, Move.Buzz)
     }
     
     
@@ -119,15 +119,15 @@ class BrainTests: XCTestCase {
      */
     func testSayFizzBuzz() {
         let result = brain.check(15)
-        XCTAssertEqual(result, "FizzBuzz")
+        XCTAssertEqual(result, Move.FizzBuzz)
     }
     
     /**
      Test for returning a String **1**
      when issuing check function with **1** as input
      */
-    func testChcekOneShouldReturnOne() {
+    func testCheckOneShouldReturnOne() {
         let result = brain.check(1)
-        XCTAssertEqual(result, "1")
+        XCTAssertEqual(result, Move.Number)
     }
 }

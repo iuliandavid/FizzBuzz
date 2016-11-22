@@ -67,18 +67,18 @@ class Brain{
      - returns
         a String containing the result of check
     */
-    func check(_ number: Int) -> String {
+    func check(_ number: Int) -> Move {
         if isDivisibleByFifteen(number: number) {
-            return "FizzBuzz"
+            return Move.FizzBuzz
         }
         if isDivisibleByThree(number: number) {
-            return "Fizz"
+            return Move.Fizz
         }
         else if isDivisibleByFive(number: number) {
-            return "Buzz"
+            return Move.Buzz
         }
         else {
-            return "\(number)"
+            return Move.Number
         }
     }
     

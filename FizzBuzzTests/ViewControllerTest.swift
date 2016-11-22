@@ -1,5 +1,5 @@
 //
-//  GameControllerTests.swift
+//  ViewControllerTest.swift
 //  FizzBuzz
 //
 //  Created by iulian david on 11/21/16.
@@ -8,26 +8,23 @@
 
 import XCTest
 @testable import FizzBuzz
-
 /**
  Test Class for GameControllerView
- 
  */
-class GameControllerViewTests: XCTestCase {
+class ViewControllerTest: XCTestCase {
     
     /** Instance of GameControllerView */
     var gameViewController : GameControllerView!
     
     override func setUp() {
         super.setUp()
-        
         ///Because in iOS architecture the view controller is tightly coupled to it’s view,
         ///we need to initialise the our Main.storyboard, then instantiate our ViewController from there
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        gameViewController = storyboard.instantiateViewController(withIdentifier: "GameControllerView") as! GameControllerView
+        gameViewController = storyboard.instantiateViewController(withIdentifier: "gameControllerView") as! GameControllerView
         UIApplication.shared.keyWindow!.rootViewController = gameViewController
         
-        //_ = gameViewController.view
+       // let _ = gameViewController.view
         // Test and Load the View at the Same Time!
         XCTAssertNotNil(gameViewController.view)
     }
@@ -39,27 +36,27 @@ class GameControllerViewTests: XCTestCase {
     
     /**
      First Test
-    */
+     */
     func testMove1IncrementsScore() {
-        gameViewController.play("1")
+        gameViewController.play(Move.Number)
         let newScore = gameViewController.gameScore
         XCTAssertEqual(newScore, 1)
     }
     
     
-    /** 
+    /**
      Play moves 1 and 2 and test the score
-    */
+     */
     func testMove2IncrementScore() {
-        gameViewController.play("1")
-        gameViewController.play("2")
+        gameViewController.play(Move.Number)
+        gameViewController.play(Move.Number)
         let newScore = gameViewController.gameScore
         XCTAssertEqual(newScore, 2)
     }
     
     /**
      Test if the game instance is initialized
-    */
+     */
     func testHasAGame() {
         XCTAssertNotNil(gameViewController.game)
     }
@@ -67,11 +64,11 @@ class GameControllerViewTests: XCTestCase {
     /**
      Test Fizz play
      Assume the score is 2 and we play Fizz
-    */
+     */
     func testFizzIncrementScore() {
         
         gameViewController.game?.score = 2
-        gameViewController.play("Fizz")
+        gameViewController.play(Move.Fizz)
         let newScore = gameViewController.gameScore
         XCTAssertEqual(newScore, 3)
     }
@@ -84,7 +81,7 @@ class GameControllerViewTests: XCTestCase {
     func testBuzzIncrementScore() {
         
         gameViewController.game?.score = 4
-        gameViewController.play("Buzz")
+        gameViewController.play(Move.Buzz)
         let newScore = gameViewController.gameScore
         XCTAssertEqual(newScore, 5)
     }
@@ -96,7 +93,7 @@ class GameControllerViewTests: XCTestCase {
     func testFizzBuzzIncrementScore() {
         
         gameViewController.game?.score = 14
-        gameViewController.play("FizzBuzz")
+        gameViewController.play(Move.FizzBuzz)
         let newScore = gameViewController.gameScore
         XCTAssertEqual(newScore, 15)
     }
@@ -106,8 +103,9 @@ class GameControllerViewTests: XCTestCase {
      Test if the user plays an incorrect move and the gameScore remains unchanged
      */
     func testIncorrectMove() {
-        gameViewController.play("FizzBuzz")
+        gameViewController.play(Move.FizzBuzz)
         let newScore = gameViewController.gameScore
         XCTAssertEqual(newScore, 0)
     }
+
 }
