@@ -8,13 +8,25 @@
 
 import UIKit
 
+
 class GameControllerView: UIViewController {
     
     //Properties
     var game : Game?
     
+    var highScore : Int? {
+        didSet {
+            guard let score = highScore else {
+                return
+            }
+            highScoreLbl.text = "\(score)"
+        }
+    }
+    
     //Outlets
     @IBOutlet weak var numberButton: UIButton!
+    @IBOutlet weak var highScoreLbl: UILabel!
+    
     
     /**
      Adding a property observer to update the numberButton
@@ -33,14 +45,9 @@ class GameControllerView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        game = Game()
         
-        guard let unwrappedGame = game else {
-            print("Game not initialized")
-            return
-        }
-        //Assigning gameScore to the default initialized 0 score of new game
-        gameScore = unwrappedGame.score
+        loadHighestScore()
+        startGame()
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,5 +88,45 @@ class GameControllerView: UIViewController {
         }
        
     }
+    
+    
+    @IBAction func restartGame(_ sender: Any) {
+        //Save highestScore
+        guard let score  = highScore else {
+            
+            return
+        }
+        var highestScore: Int = score
+        let currentScore = gameScore ?? 0
+        if score < currentScore {
+            highestScore = currentScore
+        }
+        
+        highScore = highestScore
+        
+        DataService.instance.persistToUserDefaults(key: keyForHighScore, value: highestScore)
+        startGame()
+    }
+    func startGame(){
+        game = Game()
+        
+        guard let unwrappedGame = game else {
+            print("Game not initialized")
+            return
+        }
+        //Assigning gameScore to the default initialized 0 score of new game
+        gameScore = unwrappedGame.score
+    }
+    
+    
+    func loadHighestScore(){
+        //load the highestScore
+        if let highScore = UserDefaults.standard.value(forKey: keyForHighScore) {
+            self.highScore = highScore as? Int
+        } else {
+            highScore = 0
+        }
+    }
+    
 }
 
